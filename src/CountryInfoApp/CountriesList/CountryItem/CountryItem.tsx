@@ -1,11 +1,20 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
-const CountryItem = () => {
+interface CountryItemProps {
+    onItem:React.MouseEventHandler<HTMLParagraphElement> | undefined;
+    name:string
+}
+
+const CountryItem: React.FC<CountryItemProps> = ({onItem, name}) => {
     return (
-        <div>
-            CountryItem
-        </div>
+        <p
+            style={{cursor: "pointer"}}
+            onClick={onItem}
+            className="m-1"
+        >
+            {name}
+        </p>
     );
 };
 
